@@ -1,0 +1,15 @@
+deepspeed --num_gpus=1 src/vlnce_src/train_2.py \
+    --deepspeed \
+    --deepspeed_config ds_config.json \
+    --batchSize 1 \
+    --gradient_accumulation_steps 4 \
+    --run_type train \
+    --collect_type TF \
+    --project_prefix /mnt/sdd/weiguanzhao/AirVLN_ws/ \
+    --maxAction 10 \
+    --policy_type cma \
+    --name AirVLN-VLN-100 \
+    --epochs 10 \
+    --lr 0.0001 \
+    --trainer_gpu_device 0 \
+    --dagger_it 1
